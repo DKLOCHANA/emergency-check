@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "324763105742",
+    "project_id": "mydaymate-391c2",
+    "storage_bucket": "mydaymate-391c2.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:324763105742:android:b2bfc5d72420514665539f",
+        "android_client_info": {
+          "package_name": "com.example.mydaymate"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB79kbldLbvqklxi9g5OQf4qWb5jR_omDQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
