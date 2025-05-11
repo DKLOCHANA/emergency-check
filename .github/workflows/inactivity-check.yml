@@ -1,0 +1,31 @@
+name: Check User Inactivity and Send Alerts
+
+on:
+  schedule:
+    - cron: '0 * * * *'  # Run every hour, you can adjust the timing as needed
+  workflow_dispatch:  # Allows manual triggering from GitHub UI
+
+jobs:
+  check-inactivity:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+        
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'  # Use the Node.js version of your choice
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run inactivity check script
+        run: node functions/inactivityCheck.js  # Path to your script that checks inactivity
+        env:
+          TWILIO_ACCOUNT_SID: ${{ secrets.TWILIO_ACCOUNT_SID }}
+          TWILIO_AUTH_TOKEN: ${{ secrets.TWILIO_AUTH_TOKEN }}
+          FIREBASE_API_KEY: ${{ secrets.FIREBASE_API_KEY }}
+          FIREBASE_PROJECT_ID: ${{ secrets.FIREBASE_PROJECT_ID }}
+
