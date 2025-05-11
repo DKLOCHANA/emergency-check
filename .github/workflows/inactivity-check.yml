@@ -22,7 +22,7 @@ jobs:
         run: npm install
 
       - name: Run inactivity check script
-        run: node functions/inactivityCheck.js  # Path to your script that checks inactivity
+        run: node inactivityCheck.js  # Path to your script that checks inactivity
         env:
           TWILIO_ACCOUNT_SID: ${{ secrets.TWILIO_ACCOUNT_SID }}
           TWILIO_AUTH_TOKEN: ${{ secrets.TWILIO_AUTH_TOKEN }}
